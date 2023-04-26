@@ -39,7 +39,7 @@ function route(event) {
 }
 
 function handle() {
-    //pegando a localização da parra de pesquisa.
+    //pegando a localização da parra de pesquisa.(responsavel)
     const {pathname} = window.location
 
     console.log(pathname)
