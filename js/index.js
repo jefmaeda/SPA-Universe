@@ -2,8 +2,9 @@ const home = document.querySelector(".home")
 const universe = document.querySelector(".universe")
 const explorer = document.querySelector(".explorer")
 const errorPage = document.querySelector(".errorPage")
+const htmlDate = document.querySelector("#app")
 
-//mapeamento
+//mapping
 const routes = {
     "/" : "/page/home.html",
     "/universe" : "/page/universe.html",
@@ -31,21 +32,24 @@ function route(event) {
     event = event || window.event
     event.preventDefault()
 
-    //pegar o meu href é colocar no historico
+    //get href push in history
     window.history.pushState({},"",event.target.href)
 
     handle()
 }
 
 function handle() {
-    //pegando a localização da parra de pesquisa.(responsavel)
+    //get localization of search stop.
     const {pathname} = window.location
     const route = routes[pathname] || routes[404]
 
-    //lendo o html das outras paginas
+    //reading the html of other pages
     fetch(route)
     .then(data => data.text())
-    .then(html => console.log(html))
+    .then(html => {
+        htmlDate.innerHTML= html
+    })
 
-    console.log(route)
+    // going back with arrow in search
+    window.onpopstate = () => handle() 
 }
