@@ -71,11 +71,14 @@ body{
 }
 
 .homePage button{
+    cursor: pointer;
     margin-top: 2.8rem;
     padding: 1.2rem 3.2rem;
     background: transparent;
     border-radius: 5px;
     border: 2px solid #FFFFFF;
+
+    transition: background .3s;
 }
 
 button span{
@@ -84,4 +87,8 @@ button span{
     font-size: 1.4rem;
     line-height: 2.4rem;
     text-transform: uppercase;
+}
+
+.homePage button:hover{
+    background: #484853;
 }
