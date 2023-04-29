@@ -3,6 +3,7 @@ const universe = document.querySelector(".universe")
 const explorer = document.querySelector(".explorer")
 const errorPage = document.querySelector(".errorPage")
 const htmlDate = document.querySelector("#app")
+const bgPage = document.body
 
 //mapping
 const routes = {
@@ -14,18 +15,19 @@ const routes = {
 
 home.addEventListener("click", function () {
     route()
-    
+    bgPage.classList.remove("bgUniverse")
+    bgPage.classList.remove("bgExplorer")
 })
+
 universe.addEventListener("click", function () {
     route()
+    bgPage.classList.add("bgUniverse")
+    bgPage.classList.remove("bgExplorer")
 })
 explorer.addEventListener("click", function () {
     route()
-    
-})
-errorPage.addEventListener("click", function () {
-    route()
-    
+    bgPage.classList.add("bgExplorer")
+    bgPage.classList.remove("bgUniverse")
 })
 
 function route(event) {
@@ -34,7 +36,7 @@ function route(event) {
 
     //get href push in history
     window.history.pushState({},"",event.target.href)
-
+    console.log("dentro")
     handle()
 }
 
@@ -49,7 +51,9 @@ function handle() {
     .then(html => {
         htmlDate.innerHTML= html
     })
-
-    // going back with arrow in search
-    window.onpopstate = () => handle() 
 }
+
+handle()
+
+// going back with arrow in search
+window.onpopstate = () => handle() 

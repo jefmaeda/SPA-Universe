@@ -20,17 +20,14 @@ body {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  background-image: url(./asset/home.png);
 }
 
-body.home{
-    background-image: url(./asset/home.png);
-}
-
-body.universe{
+body.bgUniverse{
     background-image: url(./asset/universe.png);
 }
 
-body.explorer{
+body.bgExplorer{
     background-image: url(./asset/explorer.png);
 }
 
@@ -62,12 +59,6 @@ h1 {
   color: #c4c4cc;
 
   transition: all 0.3s;
-}
-
-.nav a.active {
-  font-size: 2.4rem;
-  font-weight: 700;
-  color: #fff;
 }
 
 .nav a:hover {
@@ -106,14 +97,12 @@ button span {
 }
 
 /*universe page*/
-.universePage,
-.explorerPage {
+.defaultPage{
   margin: 6rem 3rem 0 10rem;
   max-width: 64rem;
 }
 
-.universePage p,
-.explorerPage p {
+.defaultPage p{
   margin-top: 1.6rem;
   color: var(--tc-text);
   font-weight: 400;
