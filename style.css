@@ -7,6 +7,9 @@
 :root{
     font-size: 62.5%;
     --ff-primary: 'Roboto', sans-serif;
+    --fs-title: 4.8rem;
+    --tc-title: #E1E1E6;
+    --tc-text: #fff;
 }
 
 body{
@@ -52,4 +55,33 @@ body{
     font-size: 2.4rem;
     font-weight: 700;
     color: #fff;
+}
+
+/*home page*/ 
+.homePage{
+    margin-top: 17rem;
+    text-align: center;
+}
+
+.homePage h1{
+    color: var(--tc-title);
+    font-weight: 700;
+    font-size: var(--fs-title);
+    line-height: 125%;
+}
+
+.homePage button{
+    margin-top: 2.8rem;
+    padding: 1.2rem 3.2rem;
+    background: transparent;
+    border-radius: 5px;
+    border: 2px solid #FFFFFF;
+}
+
+button span{
+    color: var(--tc-text);
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    text-transform: uppercase;
 }
